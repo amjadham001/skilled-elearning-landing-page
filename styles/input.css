@@ -1,1 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 @import "tailwindcss";
+
+@theme {
+	/* skilled font */
+	--font-plus-jakarta: "Plus Jakarta Sans", sans-serif;
+
+	/* skilled colors */
+	--color-skilled-blue-900: #13183f;
+	--color-skilled-blue-600: #666ca3;
+	--color-skilled-pink-600: #f7457d;
+	--color-skilled-pink-300: #ffa8c4;
+	--color-skilled-gray: #84879a;
+	--color-skilled-white: #ffffff;
+
+	/* skilled gradient-stops */
+	--skilled-gradient-stops-orange: #ff6f48, #f02aa6;
+	--skilled-gradient-stops-purple: #4851ff, #f02aa6;
+	--skilled-gradient-stops-light: --alpha(#fff / 50%), --alpha(#fff / 50%);
+}
+
+@layer components {
+	/* skilled grid */
+	.skilled-grid {
+		@apply grid grid-cols-[1fr_repeat(4,minmax(3.5rem,4rem))_1fr] gap-x-4 md:grid-cols-[1fr_repeat(8,4rem)_1fr] md:gap-x-6 xl:grid-cols-[1fr_repeat(12,4rem)_1fr] xl:gap-x-8;
+	}
+
+	/* skilled typo */
+	.skilled-typo-1 {
+		@apply text-[2.5rem] leading-[120%] font-extrabold;
+
+		@variant xl {
+			@apply text-[3.5rem];
+		}
+	}
+	.skilled-typo-2 {
+		@apply text-[2rem] leading-[120%] font-extrabold;
+
+		@variant xl {
+			@apply text-[2.5rem];
+		}
+	}
+	.skilled-typo-3 {
+		@apply text-2xl leading-[120%] font-extrabold;
+
+		@variant xl {
+			@apply text-[2rem];
+		}
+	}
+	.skilled-typo-4 {
+		@apply text-xl leading-[120%] font-extrabold;
+
+		@variant xl {
+			@apply text-2xl;
+		}
+	}
+	.skilled-typo-5 {
+		@apply text-lg leading-[150%] font-medium;
+	}
+	.skilled-typo-6 {
+		@apply text-sm leading-[120%] font-bold;
+
+		@variant xl {
+			@apply text-base leading-[150%];
+		}
+	}
+	.skilled-typo-7 {
+		@apply text-lg leading-[150%] font-bold;
+	}
+
+	/* skilled logo */
+	.skilled-logo {
+		@apply h-7 w-27.75 object-cover;
+	}
+
+	/* skilled link */
+	.skilled-link {
+		@apply text-lg leading-[150%] font-bold text-[#f74780];
+
+		@variant hover {
+			@apply cursor-pointer text-[#ffa7c3];
+		}
+	}
+
+	/* skilled buttons */
+	.skilled-btn {
+		--txt-color: var(--color-white, #fff);
+		--bg: var(--color-slate-800, #1d293d);
+		--hover-txt-color: var(--txt-color, #fff);
+		--hover-bg: var(--color-slate-600, #45556c);
+
+		@apply rounded-[1.75rem] px-8 py-4 text-lg leading-[150%] font-bold text-(--txt-color);
+
+		background: var(--bg);
+
+		@variant hover {
+			@apply cursor-pointer text-(--hover-txt-color);
+
+			background: var(--hover-bg);
+		}
+	}
+
+	.skilled-btn--black {
+		--txt-color: var(--color-skilled-white);
+		--bg: var(--color-skilled-blue-900);
+		--hover-txt-color: var(--txt-color);
+		--hover-bg: var(--color-skilled-blue-600);
+	}
+	.skilled-btn--orange {
+		--txt-color: var(--color-skilled-white);
+		--bg: linear-gradient(to bottom, var(--skilled-gradient-stops-orange));
+		--hover-txt-color: var(--txt-color);
+		--hover-bg:
+			linear-gradient(to bottom, var(--skilled-gradient-stops-light)),
+			linear-gradient(to bottom, var(--skilled-gradient-stops-orange));
+	}
+	.skilled-btn--purple {
+		--txt-color: var(--color-skilled-white);
+		--bg: linear-gradient(to bottom, var(--skilled-gradient-stops-purple));
+		--hover-txt-color: var(--txt-color);
+		--hover-bg:
+			linear-gradient(to bottom, var(--skilled-gradient-stops-light)),
+			linear-gradient(to bottom, var(--skilled-gradient-stops-purple));
+	}
+
+	.skilled-btn--mobile {
+		@apply px-6 py-3 text-base;
+	}
+}
