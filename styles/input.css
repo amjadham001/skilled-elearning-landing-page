@@ -17,6 +17,9 @@
 	--skilled-gradient-stops-orange: #ff6f48, #f02aa6;
 	--skilled-gradient-stops-purple: #4851ff, #f02aa6;
 	--skilled-gradient-stops-light: --alpha(#fff / 50%), --alpha(#fff / 50%);
+
+	/* skilled drop-shadow */
+	--skilled-dropshadow: 0 25px 50px --alpha(#06168d / 5%);
 }
 
 @layer components {
@@ -89,7 +92,7 @@
 		--hover-txt-color: var(--txt-color, #fff);
 		--hover-bg: var(--color-slate-600, #45556c);
 
-		@apply rounded-[1.75rem] px-8 py-4 text-lg leading-[150%] font-bold text-(--txt-color);
+		@apply rounded-[1.75rem] px-8 py-4 text-lg leading-[150%] font-bold text-(--txt-color) capitalize;
 
 		background: var(--bg);
 
@@ -125,5 +128,10 @@
 
 	.skilled-btn--mobile {
 		@apply px-6 py-3 text-base;
+	}
+
+	/* skilled dropshadow */
+	.skilled-dropshadow {
+		filter: drop-shadow(var(--skilled-dropshadow));
 	}
 }
