@@ -14,150 +14,210 @@
 
 		<title>Frontend Mentor | Skilled e-learning landing page</title>
 	</head>
-	<body>
-		<div class="">
-			<nav>
-				<div class="">
-					<!-- logo -->
-					<a href="#">
-						<img src="./assets/logo-dark.svg" alt="Skilled E-Learning Logo" />
-					</a>
+	<body class="font-plus-jakarta">
+		<div class="relative">
+			<nav class="absolute inset-x-0 top-0 z-1">
+				<div class="skilled-container">
+					<div class="skilled-grid">
+						<div class="col-span-full">
+							<div class="flex items-center justify-between py-4 md:py-6">
+								<a href="./index.html">
+									<img
+										class="skilled-logo"
+										src="./assets/logo-dark.svg"
+										alt="skilled e-learning logo"
+									/>
+								</a>
 
-					<!-- btn -->
-					<button>Get Started</button>
+								<button
+									class="skilled-btn skilled-btn--black px-8 py-4 md:max-xl:px-6 md:max-xl:py-3"
+								>
+									Get Started
+								</button>
+							</div>
+						</div>
+					</div>
 				</div>
 			</nav>
 
-			<header>
-				<div class="">
-					<!-- intro section -->
-					<section>
-						<h1>Maximize skill, minimize budget</h1>
+			<header class="overflow-hidden pt-22.75 md:pt-24 xl:pt-26.75">
+				<div class="skilled-container">
+					<div class="skilled-grid gap-y-12 py-16 md:items-center">
+						<div class="col-span-full md:col-span-4 xl:col-span-6">
+							<section>
+								<h1 class="skilled-typo-1 text-skilled-blue-900 mb-6">
+									Maximize skill, minimize budget
+								</h1>
 
-						<p>
-							Our modern courses across a range of in-demand skills will give
-							you the knowledge you need to live the life you want.
-						</p>
+								<p class="skilled-typo-5 text-skilled-gray mb-10 xl:w-114">
+									Our modern courses across a range of in-demand skills will
+									give you the knowledge you need to live the life you want.
+								</p>
 
-						<button>Get Started</button>
-					</section>
-
-					<!-- illustration -->
-					<div class="">
-						<picture>
-							<source
-								media="(min-width: 80rem)"
-								srcset="./assets/image-hero-desktop.webp"
-							/>
-							<source
-								media="(min-width: 48rem)"
-								srcset="./assets/image-hero-tablet.webp"
-							/>
-							<img src="./assets/image-hero-mobile.webp" alt="" />
-						</picture>
+								<button
+									class="skilled-btn skilled-btn--orange px-8 py-4 md:max-xl:px-6 md:max-xl:py-3"
+								>
+									Get Started
+								</button>
+							</section>
+						</div>
+						<div class="col-span-full md:col-span-4 xl:col-span-6">
+							<div class="relative h-80 md:h-100 xl:h-140">
+								<picture>
+									<source
+										media="(min-width: 90rem)"
+										srcset="./assets/image-hero-desktop.webp"
+									/>
+									<source
+										media="(min-width: 48rem)"
+										srcset="./assets/image-hero-tablet.webp"
+									/>
+									<img
+										class="absolute -top-[10px] -left-[76px] w-[435px] max-w-none sm:-left-[50px] sm:h-[409px] md:top-auto md:-bottom-[79px] md:-left-[30px] md:h-[723px] md:w-[695px] xl:-bottom-[64px] xl:-left-[6px] xl:h-[938px] xl:w-[1046px]"
+										src="./assets/image-hero-mobile.webp"
+										alt=""
+									/>
+								</picture>
+							</div>
+						</div>
 					</div>
 				</div>
 			</header>
 
 			<main>
-				<!-- courses section -->
-				<section>
-					<!-- intro -->
-					<div class="">
-						<h2>Check out our most popular courses!</h2>
+				<section class="skilled-gradient-white-lavender pt-16 pb-20 md:pb-36">
+					<div class="skilled-container">
+						<ul class="skilled-grid gap-y-8 xl:gap-y-14">
+							<li
+								class="drop-shadow-skilled skilled-gradient-orange-pink col-span-full row-span-3 grid grid-rows-subgrid gap-y-6 rounded-2xl p-8 md:col-span-4 md:mt-7 md:pt-16 md:pb-10"
+							>
+								<h2 class="skilled-typo-3 text-skilled-white row-span-3">
+									Check out our most popular courses!
+								</h2>
+							</li>
+
+							<li
+								class="drop-shadow-skilled bg-skilled-white relative col-span-full row-span-3 mt-7 grid grid-rows-subgrid gap-y-6 rounded-2xl px-8 pt-16 pb-10 md:col-span-4"
+							>
+								<div class="absolute -top-7 left-8">
+									<img src="./assets/icon-animation.svg" alt="" />
+								</div>
+
+								<h3 class="skilled-typo-4 text-skilled-blue-900">Animation</h3>
+
+								<p class="skilled-typo-8 text-skilled-gray">
+									Learn the latest animation techniques to create stunning
+									motion design and captivate your audience.
+								</p>
+
+								<button class="skilled-link justify-self-start">
+									Get Started
+								</button>
+							</li>
+
+							<li
+								class="drop-shadow-skilled bg-skilled-white relative col-span-full row-span-3 mt-7 grid grid-rows-subgrid gap-y-6 rounded-2xl px-8 pt-16 pb-10 md:col-span-4"
+							>
+								<div class="absolute -top-7 left-8">
+									<img src="./assets/icon-design.svg" alt="" />
+								</div>
+
+								<h3 class="skilled-typo-4 text-skilled-blue-900">Design</h3>
+
+								<p class="skilled-typo-8 text-skilled-gray">
+									Create beautiful, usable interfaces to help shape the future
+									of how the web looks.
+								</p>
+
+								<button class="skilled-link justify-self-start">
+									Get Started
+								</button>
+							</li>
+
+							<li
+								class="drop-shadow-skilled bg-skilled-white relative col-span-full row-span-3 mt-7 grid grid-rows-subgrid gap-y-6 rounded-2xl px-8 pt-16 pb-10 md:col-span-4"
+							>
+								<div class="absolute -top-7 left-8">
+									<img src="./assets/icon-photography.svg" alt="" />
+								</div>
+
+								<h3 class="skilled-typo-4 text-skilled-blue-900">
+									Photography
+								</h3>
+
+								<p class="skilled-typo-8 text-skilled-gray">
+									Explore critical fundamentals like lighting, composition, and
+									focus to capture exceptional photos.
+								</p>
+
+								<button class="skilled-link justify-self-start">
+									Get Started
+								</button>
+							</li>
+
+							<li
+								class="drop-shadow-skilled bg-skilled-white relative col-span-full row-span-3 mt-7 grid grid-rows-subgrid gap-y-6 rounded-2xl px-8 pt-16 pb-10 md:col-span-4"
+							>
+								<div class="absolute -top-7 left-8">
+									<img src="./assets/icon-crypto.svg" alt="" />
+								</div>
+
+								<h3 class="skilled-typo-4 text-skilled-blue-900">Crypto</h3>
+
+								<p class="skilled-typo-8 text-skilled-gray">
+									All you need to know to get started investing in crypto. Go
+									from beginner to advanced with this 54 hour course.
+								</p>
+
+								<button class="skilled-link justify-self-start">
+									Get Started
+								</button>
+							</li>
+
+							<li
+								class="drop-shadow-skilled bg-skilled-white relative col-span-full row-span-3 mt-7 grid grid-rows-subgrid gap-y-6 rounded-2xl px-8 pt-16 pb-10 md:col-span-4"
+							>
+								<div class="absolute -top-7 left-8">
+									<img src="./assets/icon-business.svg" alt="" />
+								</div>
+
+								<h3 class="skilled-typo-4 text-skilled-blue-900">Business</h3>
+
+								<p class="skilled-typo-8 text-skilled-gray">
+									A step-by-step playbook to help you start, scale, and sustain
+									your business without outside investment.
+								</p>
+
+								<button class="skilled-link justify-self-start">
+									Get Started
+								</button>
+							</li>
+						</ul>
 					</div>
-
-					<!-- subgrid -->
-					<ul class="">
-						<!-- courses card -->
-						<li class="">
-							<!-- icon -->
-							<div class="">
-								<img src="./assets/icon-animation.svg" alt="" />
-							</div>
-
-							<h3>Animation</h3>
-
-							<p>
-								Learn the latest animation techniques to create stunning motion
-								design and captivate your audience.
-							</p>
-
-							<button>Get Started</button>
-						</li>
-						<li class="">
-							<!-- icon -->
-							<div class="">
-								<img src="./assets/icon-design.svg" alt="" />
-							</div>
-
-							<h3>Design</h3>
-
-							<p>
-								Create beautiful, usable interfaces to help shape the future of
-								how the web looks.
-							</p>
-
-							<button>Get Started</button>
-						</li>
-						<li class="">
-							<!-- icon -->
-							<div class="">
-								<img src="./assets/icon-photography.svg" alt="" />
-							</div>
-
-							<h3>Photography</h3>
-
-							<p>
-								Explore critical fundamentals like lighting, composition, and
-								focus to capture exceptional photos.
-							</p>
-
-							<button>Get Started</button>
-						</li>
-						<li class="">
-							<!-- icon -->
-							<div class="">
-								<img src="./assets/icon-crypto.svg" alt="" />
-							</div>
-
-							<h3>Crypto</h3>
-
-							<p>
-								All you need to know to get started investing in crypto. Go from
-								beginner to advanced with this 54 hour course.
-							</p>
-
-							<button>Get Started</button>
-						</li>
-						<li class="">
-							<!-- icon -->
-							<div class="">
-								<img src="./assets/icon-business.svg" alt="" />
-							</div>
-
-							<h3>Business</h3>
-
-							<p>
-								A step-by-step playbook to help you start, scale, and sustain
-								your business without outside investment.
-							</p>
-
-							<button>Get Started</button>
-						</li>
-					</ul>
 				</section>
 			</main>
 
-			<footer>
-				<div class="">
-					<!-- logo -->
-					<a href="#">
-						<img src="./assets/logo-light.svg" alt="Skilled E-Learning Logo" />
-					</a>
+			<footer class="bg-skilled-blue-900 text-skilled-white">
+				<div class="skilled-container">
+					<div class="skilled-grid">
+						<div class="col-span-full">
+							<div class="flex items-center justify-between py-6">
+								<a href="./index.html">
+									<img
+										class="skilled-logo"
+										src="./assets/logo-light.svg"
+										alt="skilled e-learning logo"
+									/>
+								</a>
 
-					<!-- btn -->
-					<button>Get Started</button>
+								<button
+									class="skilled-btn skilled-btn--purple px-6 py-3 xl:px-8 xl:py-4"
+								>
+									Get Started
+								</button>
+							</div>
+						</div>
+					</div>
 				</div>
 			</footer>
 		</div>

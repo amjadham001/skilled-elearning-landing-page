@@ -2,6 +2,10 @@
 @import "tailwindcss";
 
 @theme {
+	/* skilled breakpoints */
+	--breakpoint-sm: 23.4375rem; /* 375px */
+	--breakpoint-xl: 90rem; /* 1440px */
+
 	/* skilled font */
 	--font-plus-jakarta: "Plus Jakarta Sans", sans-serif;
 
@@ -14,18 +18,27 @@
 	--color-skilled-white: #ffffff;
 
 	/* skilled gradient-stops */
-	--skilled-gradient-stops-orange: #ff6f48, #f02aa6;
-	--skilled-gradient-stops-purple: #4851ff, #f02aa6;
-	--skilled-gradient-stops-light: --alpha(#fff / 50%), --alpha(#fff / 50%);
+	--color-skilled-stops-orange: #ff6f48;
+	--color-skilled-stops-pink: #f02aa6;
+	--color-skilled-stops-purple: #4851ff;
+	--color-skilled-stops-white: #ffffff;
+	--color-skilled-stops-lavender: #f0f1ff;
 
 	/* skilled drop-shadow */
-	--skilled-dropshadow: 0 25px 50px --alpha(#06168d / 5%);
+	--drop-shadow-skilled: 0 25px 50px --alpha(#06168d / 5%);
 }
 
 @layer components {
+	/* skilled container */
+	.skilled-container {
+		@apply px-5 md:px-11 xl:px-20;
+		@apply mx-auto max-w-93.75 md:max-w-192 xl:max-w-320;
+	}
+
 	/* skilled grid */
 	.skilled-grid {
-		@apply grid grid-cols-[1fr_repeat(4,minmax(3.5rem,4rem))_1fr] gap-x-4 md:grid-cols-[1fr_repeat(8,4rem)_1fr] md:gap-x-6 xl:grid-cols-[1fr_repeat(12,4rem)_1fr] xl:gap-x-8;
+		@apply grid grid-cols-4 md:grid-cols-8 xl:grid-cols-12;
+		@apply gap-x-4 md:gap-x-6 xl:gap-x-8;
 	}
 
 	/* skilled typo */
@@ -70,10 +83,17 @@
 	.skilled-typo-7 {
 		@apply text-lg leading-[150%] font-bold;
 	}
+	.skilled-typo-8 {
+		@apply text-base leading-[150%] font-bold;
+	}
 
 	/* skilled logo */
 	.skilled-logo {
-		@apply h-7 w-27.75 object-cover;
+		@apply h-5 object-cover;
+
+		@variant xl {
+			@apply h-7;
+		}
 	}
 
 	/* skilled link */
@@ -87,51 +107,65 @@
 
 	/* skilled buttons */
 	.skilled-btn {
-		--txt-color: var(--color-white, #fff);
-		--bg: var(--color-slate-800, #1d293d);
-		--hover-txt-color: var(--txt-color, #fff);
-		--hover-bg: var(--color-slate-600, #45556c);
-
-		@apply rounded-[1.75rem] px-8 py-4 text-lg leading-[150%] font-bold text-(--txt-color) capitalize;
-
-		background: var(--bg);
+		@apply rounded-[1.75rem] text-lg leading-[150%] font-bold capitalize;
 
 		@variant hover {
-			@apply cursor-pointer text-(--hover-txt-color);
-
-			background: var(--hover-bg);
+			@apply cursor-pointer;
 		}
 	}
 
 	.skilled-btn--black {
-		--txt-color: var(--color-skilled-white);
-		--bg: var(--color-skilled-blue-900);
-		--hover-txt-color: var(--txt-color);
-		--hover-bg: var(--color-skilled-blue-600);
+		@apply bg-(--color-skilled-blue-900) text-(--color-skilled-white);
+
+		@variant hover {
+			@apply bg-(--color-skilled-blue-600);
+		}
 	}
 	.skilled-btn--orange {
-		--txt-color: var(--color-skilled-white);
-		--bg: linear-gradient(to bottom, var(--skilled-gradient-stops-orange));
-		--hover-txt-color: var(--txt-color);
-		--hover-bg:
-			linear-gradient(to bottom, var(--skilled-gradient-stops-light)),
-			linear-gradient(to bottom, var(--skilled-gradient-stops-orange));
+		@apply from-skilled-stops-orange to-skilled-stops-pink bg-linear-to-b text-(--color-skilled-white);
+
+		@variant hover {
+			background-image:
+				linear-gradient(
+					to bottom,
+					--alpha(var(--color-skilled-stops-white) / 50%),
+					--alpha(var(--color-skilled-stops-white) / 50%)
+				),
+				linear-gradient(
+					to bottom,
+					var(--color-skilled-stops-orange),
+					var(--color-skilled-stops-pink)
+				);
+		}
 	}
 	.skilled-btn--purple {
-		--txt-color: var(--color-skilled-white);
-		--bg: linear-gradient(to bottom, var(--skilled-gradient-stops-purple));
-		--hover-txt-color: var(--txt-color);
-		--hover-bg:
-			linear-gradient(to bottom, var(--skilled-gradient-stops-light)),
-			linear-gradient(to bottom, var(--skilled-gradient-stops-purple));
-	}
+		@apply from-skilled-stops-pink to-skilled-stops-purple bg-linear-to-b text-(--color-skilled-white);
 
-	.skilled-btn--mobile {
-		@apply px-6 py-3 text-base;
+		@variant hover {
+			background-image:
+				linear-gradient(
+					to bottom,
+					--alpha(var(--color-skilled-stops-white) / 50%),
+					--alpha(var(--color-skilled-stops-white) / 50%)
+				),
+				linear-gradient(
+					to bottom,
+					var(--color-skilled-stops-pink),
+					var(--color-skilled-stops-purple)
+				);
+		}
 	}
 
 	/* skilled dropshadow */
 	.skilled-dropshadow {
-		filter: drop-shadow(var(--skilled-dropshadow));
+		filter: drop-shadow(var(--drop-shadow-skilled));
+	}
+
+	/* skilled gradients */
+	.skilled-gradient-orange-pink {
+		@apply from-skilled-stops-orange to-skilled-stops-pink bg-linear-to-b;
+	}
+	.skilled-gradient-white-lavender {
+		@apply from-skilled-stops-white to-skilled-stops-lavender bg-linear-to-b;
 	}
 }
